@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolbox.Trace", "Toolbox.Tr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolbox.Trace.TestApp", "Toolbox.Trace.TestApp\Toolbox.Trace.TestApp.csproj", "{923F8602-E8CA-4978-BF75-C85248E651A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toolbox.Trace.Test", "Toolbox.Trace.Test\Toolbox.Trace.Test.csproj", "{18233870-78F3-4C80-BE59-C15A777BB400}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{923F8602-E8CA-4978-BF75-C85248E651A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{923F8602-E8CA-4978-BF75-C85248E651A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{923F8602-E8CA-4978-BF75-C85248E651A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18233870-78F3-4C80-BE59-C15A777BB400}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18233870-78F3-4C80-BE59-C15A777BB400}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18233870-78F3-4C80-BE59-C15A777BB400}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18233870-78F3-4C80-BE59-C15A777BB400}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
