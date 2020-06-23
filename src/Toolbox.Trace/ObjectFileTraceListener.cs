@@ -15,7 +15,7 @@ namespace Toolbox.Trace
         public ObjectFileTraceListener()
         {
             Filename = "ObjectFileTraceListener.txt";
-            Template = "[{Timestamp:G}] <P={ProcessId}> <T={ThreadId}> {Source}: {Method} - {Text}";
+            Template = "[{Timestamp:G}] <P={ProcessId}> <T={ThreadId}> {Source}: {EventType}[{Id}] - {Method} - {Text}";
         }
 
         public ObjectFileTraceListener(string initData)

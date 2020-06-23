@@ -49,8 +49,13 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TraceSourceTests.cs" />
+    <Compile Include="ObjectFileTraceListenerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -60,6 +65,33 @@
       <Project>{80dfe6d6-fd64-4499-a92f-8dd4bdd09ccc}</Project>
       <Name>Toolbox.Trace</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ObjectFileTraceListenerTests\TraceInformation.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ObjectFileTraceListenerTests\TraceEvent.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ObjectFileTraceListenerTests\TraceEventMessage.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ObjectFileTraceListenerTests\TraceEventMessageFormat.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ObjectFileTraceListenerTests\TraceInformationFormat.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ObjectFileTraceListenerTests\TraceInformationFromAction.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ObjectFileTraceListenerTests\TraceInformationFromMethod.txt" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

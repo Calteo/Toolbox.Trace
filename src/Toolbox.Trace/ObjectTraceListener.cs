@@ -129,10 +129,12 @@ namespace Toolbox.Trace
 
         public override void WriteLine(string message)
         {
+            throw new NotImplementedException();
         }
 
         public override void Write(string message)
         {
+            throw new NotImplementedException();
         }
 
         public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string format, params object[] args)
