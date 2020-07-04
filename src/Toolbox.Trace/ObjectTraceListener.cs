@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Concurrent;
+using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading;
 
 namespace Toolbox.Trace
@@ -15,9 +13,15 @@ namespace Toolbox.Trace
     {
         public ObjectTraceListener()
         {
+            RegisterConverter<TraceConverterString>();
+            RegisterConverter<TraceConverterValueType>();
+
+            ObjectConverter = new TraceConverterObject { Listener = this };
+            EnumerableConverter = new TraceConverterEnumerable { Listener = this };
         }
 
         public ObjectTraceListener(string initData)
+            : this()
         {            
         }
 
@@ -49,26 +53,12 @@ namespace Toolbox.Trace
             OutputWait.Set();
         }
 
-        #region TraceItem
-        protected class TraceItem
-        {
-            public DateTime Timestamp { get; set; }
-            public string Source { get; set; }
-            public TraceEventType EventType { get; set; }
-            public int Id { get; set; }
-            public int ThreadId { get; set; }
-            public int ProcessId { get; set; }
-            public string Text { get; set; }
-            public StackFrame Caller { get; set; }
-            public MethodBase Method => Caller.GetMethod();
-        }
-
         abstract protected void Write(TraceItem item);
+
         protected virtual void Init()
         {
             Writer = CreateWriter();
         }
-        #endregion
 
         #region OutputWorker
         private Thread OutputWorker { get; set; }
@@ -162,6 +152,90 @@ namespace Toolbox.Trace
         public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string message)
         {
             TraceEvent(eventCache, source, eventType, id, message, null);
+        }
+
+        public override void TraceData(TraceEventCache eventCache, string source, TraceEventType eventType, int id, object data)
+        {
+            TraceData(eventCache, source, eventType, id, new[] { data });
+        }
+
+        public override void TraceData(TraceEventCache eventCache, string source, TraceEventType eventType, int id, params object[] data)
+        {
+            var frames = GetFrames();
+
+            var captures = data?.Aggregate(
+                new List<TraceCapture>(), 
+                (list, obj) => 
+                    {
+                        var capture = obj != null
+                                        ? GetConverter(obj).CaptureCore(obj)
+                                        : new TraceCapture { Text = "<null>" };
+                        capture.Name = $"[{list.Count}]";
+                        list.Add(capture);
+
+                        return list; 
+                    }).ToArray();
+
+            Enqueue(
+                new TraceItem
+                {
+                    Source = source,
+                    EventType = eventType,
+                    Id = id,
+                    ThreadId = Thread.CurrentThread.ManagedThreadId,
+                    ProcessId = Process.GetCurrentProcess().Id,
+                    Text = data == null ? "no objects" : $"{data.Length} object(s)",
+                    Objects = captures,
+                    Caller = frames[0]
+                });
+        }
+
+        private Dictionary<Type, TraceConverterBase> TraceConverters { get; } = new Dictionary<Type, TraceConverterBase>();
+        public void RegisterConverter<T>() where T : TraceConverterBase, new()
+        {
+            var converter = new T { Listener = this };
+            TraceConverters[converter.ConvertType] = converter;
+        }
+
+        private TraceConverterObject ObjectConverter { get; } 
+        private TraceConverterEnumerable EnumerableConverter { get; }
+
+        internal TraceConverterBase GetConverter(object obj)
+        {
+            var converter = GetConverter(obj.GetType());
+
+            if (converter == null)
+            {
+                if (obj is IEnumerable)
+                    return EnumerableConverter;
+
+                return ObjectConverter;
+            }
+
+            return converter;
+        }
+
+        internal TraceConverterBase GetConverter(Type type)
+        {
+            if (type == null) throw new ArgumentNullException(nameof(type));
+
+            if (!TraceConverters.TryGetValue(type, out var converter))
+            {
+                var attribute = type.GetCustomAttribute<TraceConverterAttribute>();
+                if (attribute != null)
+                {
+                    converter = attribute.CreateConverter(type);
+                    converter.Listener = this;
+                    TraceConverters[type] = converter;
+                }
+            }
+
+            if (type.BaseType == null)
+            {
+                return null;
+            }
+
+            return converter ?? GetConverter(type.BaseType);
         }
     }
 }

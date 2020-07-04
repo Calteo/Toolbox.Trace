@@ -286,5 +286,39 @@ namespace Toolbox.Trace.Test
 
             AssertLines(expectedLines, actualLines);
         }
+
+        [TestMethod]
+        public void TraceDataSingle()
+        {
+            var cut = new ObjectFileTraceListener
+            {
+                Name = "object",
+                Filename = $"Trace-{GetMethodName()}.txt",
+                TraceOutputOptions = TraceOptions.DateTime | TraceOptions.ProcessId | TraceOptions.ThreadId,
+            };
+
+            var source = new TraceSource(nameof(ObjectFileTraceListenerTests), SourceLevels.All)
+            {
+                Listeners = { cut }
+            };
+
+            const int id = 42;
+            const TraceEventType eventType = TraceEventType.Verbose;
+            const string message = "some message";
+            const int number = 787;
+
+            var data = new Data { Text = message, Id = number };
+
+            source.TraceData(eventType, id, data);
+
+            source.Close();
+
+            var expectedLines = GetPatterns(GetMethodName());
+            var actualLines = GetLines(cut);
+
+            AssertLines(expectedLines, actualLines);
+        }
+
+
     }
 }

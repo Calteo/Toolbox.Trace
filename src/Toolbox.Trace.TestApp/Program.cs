@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Toolbox.Trace.TestApp
 {
@@ -26,7 +22,17 @@ namespace Toolbox.Trace.TestApp
             var listener = source.Listeners["object"] as ObjectFileTraceListener;
             
             source.TraceInformation("simple information");
-            
+
+            source.TraceData(TraceEventType.Information, 42, "Hello");
+
+            var data = new SimpleData { Name = "Bob", Number = 678798798 };
+
+            source.TraceData(TraceEventType.Warning, 42, "Something important", data);
+            source.TraceData(TraceEventType.Error, 42, "no data given", null);
+            source.TraceData(TraceEventType.Error, 42, "array of data", new[] { data, data });
+            source.TraceData(TraceEventType.Error, 42, "List of data", new List<SimpleData> { data, data });
+            source.TraceData(TraceEventType.Error, 42, "List of string", new List<string> { "One", "Two", "Three" });
+
             source.Close();
             
             using (var reader = new StreamReader(listener.Filename))

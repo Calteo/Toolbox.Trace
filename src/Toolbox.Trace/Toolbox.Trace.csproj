@@ -44,9 +44,33 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="ArrayExtension.cs" />
     <Compile Include="ObjectTraceListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ObjectFileTraceListener.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TraceCapture.cs" />
+    <Compile Include="TraceConverter.cs" />
+    <Compile Include="TraceConverterAttribute.cs" />
+    <Compile Include="TraceConverterBase.cs" />
+    <Compile Include="TraceConverterEnumerable.cs" />
+    <Compile Include="TraceConverterObject.cs" />
+    <Compile Include="TraceConverterString.cs" />
+    <Compile Include="TraceConverterValueType.cs" />
+    <Compile Include="TraceItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ObjectFileTraceListenerTemplate.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

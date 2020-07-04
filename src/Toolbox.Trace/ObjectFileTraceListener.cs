@@ -14,8 +14,8 @@ namespace Toolbox.Trace
     {
         public ObjectFileTraceListener()
         {
-            Filename = "ObjectFileTraceListener.txt";
-            Template = "[{Timestamp:G}] <P={ProcessId}> <T={ThreadId}> {Source}: {EventType}[{Id}] - {Method} - {Text}";
+            Filename = $"{nameof(ObjectFileTraceListener)}.txt";
+            Template = Properties.Resources.ObjectFileTraceListenerTemplate;
         }
 
         public ObjectFileTraceListener(string initData)
@@ -94,10 +94,10 @@ namespace Toolbox.Trace
                 {
                     switch (blockMatch.Groups["parameter"].Value)
                     {
-                        case "objects":
+                        case "Objects":
                             TemplateLines.Add(t => WriteObjects(t, blockMatch.Groups["option"].Value, blockMatch.Groups["prefix"].Value, blockMatch.Groups["suffic"].Value));
                             break;
-                        case "stacktrace":
+                        case "StackTrace":
                             TemplateLines.Add(t => WriteStackTrace(t, blockMatch.Groups["option"].Value, blockMatch.Groups["prefix"].Value, blockMatch.Groups["suffic"].Value));
                             break;
                         default:
@@ -116,7 +116,7 @@ namespace Toolbox.Trace
                         foreach (Match match in parameterMatches)
                         {
                             var parameter = match.Groups["parameter"].Value;
-                            if (parameter == "object" || parameter == "stacktrace")
+                            if (parameter == "Object" || parameter == "StackTrace")
                                 throw new NotSupportedException($"block parameter {parameter} not supported in mixed template line");
                             if (!properties.Contains(parameter))
                                 throw new NotSupportedException($"parameter {parameter} not supported");
@@ -136,7 +136,13 @@ namespace Toolbox.Trace
 
         private void WriteObjects(TraceItem item, string options, string prefix, string suffix)
         {
-            
+            item.Objects?.ForEach(c => WriteCapture(c, prefix, suffix));
+        }
+
+        private void WriteCapture(TraceCapture capture, string prefix, string suffix)
+        {
+            Writer.WriteLine($"{prefix}{capture.Name} = {capture.Text}");
+            capture.Children?.ForEach(c => WriteCapture(c, prefix + "    ", suffix));
         }
 
         private void WriteStackTrace(TraceItem item, string options, string prefix, string suffix)
@@ -144,7 +150,7 @@ namespace Toolbox.Trace
         }
 
         private static readonly Regex PatternProperties = new Regex(@"{(?<parameter>\w+)((?<option>:[^}]+))?}", RegexOptions.Compiled);
-        private static readonly Regex PatternBlocks = new Regex(@"^(?<prefix>.*){(?<parameter>(stacktrace|objects))(:(?<option>[^}]+))?}(?<suffix>.*)$", RegexOptions.Compiled);
+        private static readonly Regex PatternBlocks = new Regex(@"^(?<prefix>.*){(?<parameter>(StackTrace|Objects))(:(?<option>[^}]+))?}(?<suffix>.*)$", RegexOptions.Compiled);
 
         protected override TextWriter CreateWriter()
         {
