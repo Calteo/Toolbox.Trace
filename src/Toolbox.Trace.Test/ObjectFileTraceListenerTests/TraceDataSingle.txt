@@ -1,0 +1,4 @@
+﻿[\d{2}.\d{2}.\d{4} \d{2}:\d{2}:\d{2}] <P=\d+> <T=\d+> ObjectFileTraceListenerTests: Verbose[42] - Void TraceDataSingle() - 1 object(s)
+  [0] = Toolbox.Trace.Test.Data
+      Text = 'some message'
+      Id = 787

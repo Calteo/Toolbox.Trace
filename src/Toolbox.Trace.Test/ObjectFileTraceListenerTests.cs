@@ -318,7 +318,5 @@ namespace Toolbox.Trace.Test
 
             AssertLines(expectedLines, actualLines);
         }
-
-
     }
 }
