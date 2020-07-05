@@ -15,6 +15,7 @@ namespace Toolbox.Trace
         {
             RegisterConverter<TraceConverterString>();
             RegisterConverter<TraceConverterValueType>();
+            RegisterConverter<TraceConverterSecureString>();
 
             ObjectConverter = new TraceConverterObject { Listener = this };
             EnumerableConverter = new TraceConverterEnumerable { Listener = this };
@@ -32,6 +33,42 @@ namespace Toolbox.Trace
         protected abstract TextWriter CreateWriter();
         
         private Queue<TraceItem> Items { get; } = new Queue<TraceItem>();
+
+        protected T GetAttribute<T>(string key)
+        {
+            var value = Attributes[key];
+
+            if (value == null) return default;
+
+            return (T)Convert.ChangeType(value, typeof(T));
+        }
+
+        protected void SetAttribute<T>(string key, T value)
+        {
+            if (value == null)
+                Attributes.Remove(key);
+            else
+                Attributes[key] = Convert.ToString(value);
+        }
+
+        protected override string[] GetSupportedAttributes()
+        {
+            var names = GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public).Select(p => p.GetCustomAttribute<SupportedAttributeAttribute>(true)?.Name)
+                            .Where(n => n != null);
+
+            return (base.GetSupportedAttributes()?.Concat(names) ?? names).ToArray();
+        }
+
+        #region Append
+        private const string AttributeMaxCollectionCount = "maxCollectionCount";
+        [SupportedAttribute(AttributeMaxCollectionCount)]
+        public int MaxCollectionCount         
+        {
+            get => GetAttribute<int>(AttributeMaxCollectionCount);
+            set => SetAttribute(AttributeMaxCollectionCount, value);
+        }
+        #endregion
+
 
         protected void Enqueue(TraceItem item)
         {

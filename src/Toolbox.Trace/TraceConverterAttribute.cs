@@ -5,7 +5,7 @@ namespace Toolbox.Trace
     [AttributeUsage(AttributeTargets.Property|AttributeTargets.Class, AllowMultiple=false, Inherited=true)]
     public class TraceConverterAttribute : Attribute
     {
-        public TraceConverterAttribute(Type converterType)
+        public TraceConverterAttribute(Type converterType, params object[] args)
         {
             if (!typeof(TraceConverterBase).IsAssignableFrom(converterType))
                 throw new ArgumentException($"Converter type does not inherit from {typeof(TraceConverterBase).FullName}.", nameof(converterType));

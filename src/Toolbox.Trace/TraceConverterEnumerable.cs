@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Toolbox.Trace
 {
@@ -20,6 +16,13 @@ namespace Toolbox.Trace
                 var childCapture = Listener.GetConverter(enumarator.Current).CaptureCore(enumarator.Current);
                 childCapture.Name = $"[{index++}]";
                 children.Add(childCapture);
+                if (index >= Listener.MaxCollectionCount)
+                {
+                    var start = index;
+                    while (enumarator.MoveNext()) index++;
+                    children.Add(new TraceCapture { Name = $"[{start}-{index-1}]", Text = "..." });
+                    break;
+                }
             }
             capture.Children = children.ToArray();
             capture.Text += $" - {index} elements";            

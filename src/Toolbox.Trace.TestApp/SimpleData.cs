@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Toolbox.Trace.TestApp
 {
@@ -10,5 +6,9 @@ namespace Toolbox.Trace.TestApp
     {
         public string Name { get; set; }
         public int Number { get; set; }
+        [NotTraceable]
+        public string Secret => "This should not appear in the trace.";
+
+        public DateTime TimeStamp { get; set; } = DateTime.Now;
     }
 }

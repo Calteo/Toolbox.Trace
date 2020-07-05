@@ -15,7 +15,9 @@ namespace Toolbox.Trace
         
         protected TraceCapture[] GetChildren(object obj)
         {
-            var properties = obj.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public);
+            var properties = obj.GetType()
+                                .GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                                .Where(p => p.GetCustomAttribute<NotTraceableAttribute>(true) == null);
 
             return properties.Select(p => Capture(obj, p)).ToArray();
         }

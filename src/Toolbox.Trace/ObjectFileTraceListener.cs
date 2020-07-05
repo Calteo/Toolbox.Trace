@@ -23,37 +23,9 @@ namespace Toolbox.Trace
         {            
         }        
 
-        private static string[] SupportedAttributes { get; } = new[] 
-        { 
-            AttributeFilename, 
-            AttributeAppend,
-            AttributeTemplate,
-        };
-
-        protected override string[] GetSupportedAttributes()
-        {
-            return base.GetSupportedAttributes()?.Concat(SupportedAttributes).ToArray() ?? SupportedAttributes;
-        }
-
-        private T GetAttribute<T>(string key) 
-        {
-            var value = Attributes[key];
-
-            if (value == null) return default;            
-
-            return (T)Convert.ChangeType(value, typeof(T));
-        }
-
-        private void SetAttribute<T>(string key, T value)
-        {
-            if (value == null)
-                Attributes.Remove(key);
-            else
-                Attributes[key] = Convert.ToString(value);
-        }
-
         #region Filename
         private const string AttributeFilename = "filename";
+        [SupportedAttribute(AttributeFilename)]
         public string Filename
         {
             get => Attributes[AttributeFilename];
@@ -61,8 +33,9 @@ namespace Toolbox.Trace
         }
         #endregion
 
-        #region Filename
+        #region Append
         private const string AttributeAppend = "append";
+        [SupportedAttribute(AttributeAppend)]
         public bool Append
         {
             get => GetAttribute<bool>(AttributeAppend);
@@ -72,6 +45,7 @@ namespace Toolbox.Trace
 
         #region Template
         private const string AttributeTemplate = "template";
+        [SupportedAttribute(AttributeTemplate)]
         public string Template
         {
             get => Attributes[AttributeTemplate];
