@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace Toolbox.Trace
 {
@@ -25,14 +23,21 @@ namespace Toolbox.Trace
         private TraceCapture Capture(object obj, PropertyInfo property)
         {
             var value = property.GetValue(obj);
-
+                        
             var capture = value != null
-                ? Listener.GetConverter(value).CaptureCore(value)
+                ? (GetConverter(property) ?? Listener.GetConverter(value)).CaptureCore(value)
                 : new TraceCapture { Text = "<null>" };
             capture.Name = property.Name;
 
             return capture;
         }
 
+        private TraceConverterBase GetConverter(PropertyInfo property)
+        {
+            var attribute = property.GetCustomAttribute<TraceConverterAttribute>(true);
+            if (attribute == null) return null;
+
+            return (TraceConverterBase)Activator.CreateInstance(attribute.ConvertType, attribute.Arguments);
+        }
     }
 }

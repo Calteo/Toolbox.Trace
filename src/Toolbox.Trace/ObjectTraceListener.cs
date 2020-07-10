@@ -9,8 +9,14 @@ using System.Threading;
 
 namespace Toolbox.Trace
 {
+    /// <summary>
+    /// Base class for all listeners that trace objects.
+    /// </summary>
     public abstract class ObjectTraceListener : TraceListener
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectTraceListener"/> class.
+        /// </summary>
         public ObjectTraceListener()
         {
             RegisterConverter<TraceConverterString>();
@@ -20,12 +26,16 @@ namespace Toolbox.Trace
             ObjectConverter = new TraceConverterObject { Listener = this };
             EnumerableConverter = new TraceConverterEnumerable { Listener = this };
         }
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectTraceListener"/> class.
+        /// </summary>
+        /// <param name="initData">this is ignored</param>
         public ObjectTraceListener(string initData)
             : this()
         {            
         }
 
+        /// <inheritdoc/>
         public override bool IsThreadSafe => true;
 
         protected TextWriter Writer { get; private set; }
@@ -61,6 +71,12 @@ namespace Toolbox.Trace
 
         #region Append
         private const string AttributeMaxCollectionCount = "maxCollectionCount";
+        /// <summary>
+        /// Gets or sets the length of elements trace from a collection.
+        /// </summary>
+        /// <remarks>
+        /// This property can be set from the configuration file with the attribute 'maxCollectionCount'.
+        /// </remarks>        
         [SupportedAttribute(AttributeMaxCollectionCount)]
         public int MaxCollectionCount         
         {
@@ -68,7 +84,6 @@ namespace Toolbox.Trace
             set => SetAttribute(AttributeMaxCollectionCount, value);
         }
         #endregion
-
 
         protected void Enqueue(TraceItem item)
         {
@@ -105,7 +120,7 @@ namespace Toolbox.Trace
         {            
             Init();
 
-            while (OutputRunning || Items.Count>0)
+            do
             {
                 TraceItem item = null;
                 lock (Items)
@@ -122,9 +137,11 @@ namespace Toolbox.Trace
                     OutputWait.WaitOne(1000);
                 }
             }
+            while (OutputRunning || Items.Count > 0);
         }
         #endregion
 
+        /// <inheritdoc/>
         public override void Flush()
         {
             Writer?.Flush();
@@ -132,6 +149,7 @@ namespace Toolbox.Trace
             OutputWait.Set();
         }
 
+        /// <inheritdoc/>
         public override void Close()
         {
             OutputRunning = false;
@@ -141,7 +159,7 @@ namespace Toolbox.Trace
 
             Flush();
 
-            Writer.Close();
+            Writer?.Close();
 
             base.Close();
         }
@@ -154,16 +172,19 @@ namespace Toolbox.Trace
             return frames;
         }
 
+        /// <inheritdoc/>
         public override void WriteLine(string message)
         {
             throw new NotImplementedException();
         }
 
+        /// <inheritdoc/>
         public override void Write(string message)
         {
             throw new NotImplementedException();
         }
 
+        /// <inheritdoc/>
         public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string format, params object[] args)
         {
             var frames = GetFrames();
@@ -181,21 +202,25 @@ namespace Toolbox.Trace
                 });
         }
 
+        /// <inheritdoc/>
         public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id)
         {
             TraceEvent(eventCache, source, eventType, id, "");
         }
 
+        /// <inheritdoc/>
         public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string message)
         {
             TraceEvent(eventCache, source, eventType, id, message, null);
         }
 
+        /// <inheritdoc/>
         public override void TraceData(TraceEventCache eventCache, string source, TraceEventType eventType, int id, object data)
         {
             TraceData(eventCache, source, eventType, id, new[] { data });
         }
 
+        /// <inheritdoc/>
         public override void TraceData(TraceEventCache eventCache, string source, TraceEventType eventType, int id, params object[] data)
         {
             var frames = GetFrames();

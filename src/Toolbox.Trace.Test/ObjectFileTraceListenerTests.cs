@@ -35,10 +35,10 @@ namespace Toolbox.Trace.Test
             return methodName;
         }
 
-        private List<string> GetLines(ObjectFileTraceListener listner)
+        private List<string> GetLines(ObjectFileTraceListener listener)
         {
             var lines = new List<string>();
-            using (var reader = new StreamReader(listner.Filename))
+            using (var reader = new StreamReader(listener.Filename))
             {
                 while (reader.Peek() >= 0)
                 {

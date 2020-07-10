@@ -11,9 +11,11 @@ namespace Toolbox.Trace
                 throw new ArgumentException($"Converter type does not inherit from {typeof(TraceConverterBase).FullName}.", nameof(converterType));
 
             ConvertType = converterType;
+            Arguments = args;
         }
 
         public Type ConvertType { get; }
+        public object[] Arguments { get; }
 
         internal TraceConverterBase CreateConverter(Type type)
         {

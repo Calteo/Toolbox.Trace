@@ -10,7 +10,9 @@ namespace Toolbox.Trace.TestApp
     {
         static void Main(string[] args)
         {
-            TestInformation();
+            // TestFromCode();
+            TestDataFromCode();
+            // TestInformation();
         }
 
         public static TraceSource CreateSource()
@@ -50,7 +52,6 @@ namespace Toolbox.Trace.TestApp
             } 
             source.TraceData(TraceEventType.Critical, 49, "some password", password);
 
-
             source.Close();
             
             using (var reader = new StreamReader(listener.Filename))
@@ -58,5 +59,28 @@ namespace Toolbox.Trace.TestApp
                 var text = reader.ReadToEnd();
             }
         }
+
+        static void TestFromCode()
+        {
+            var source = new TraceSource("TestFromCode", SourceLevels.All);
+            var listener = new ObjectFileTraceListener { Filename = "trace.txt" };
+            source.Listeners.Add(listener);
+
+            source.TraceInformation("Hello trace!");
+        }
+
+        static void TestDataFromCode()
+        {
+            var source = new TraceSource("TestDataFromCode", SourceLevels.All);
+            var listener = new ObjectFileTraceListener { Filename = "trace.txt" };
+            source.Listeners.Add(listener);
+
+            var data = new SimpleData { Name = "Alice" };
+
+            source.TraceData(TraceEventType.Error, 42, "some text", data);
+
+            source.Close();
+        }
+
     }
 }

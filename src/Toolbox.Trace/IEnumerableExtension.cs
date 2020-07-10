@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Toolbox.Trace
 {
-    static class ArrayExtension
+    /// <summary>
+    /// Extensions to the <see cref="IEnumerable<T>"/> interface
+    /// </summary>
+    static class IEnumerableExtension
     {
         public static void ForEach<T>(this IEnumerable<T> collection, Action<T> action)
         {

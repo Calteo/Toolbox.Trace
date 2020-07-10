@@ -2,11 +2,23 @@
 
 namespace Toolbox.Trace
 {
-    class TraceConverterValueType : TraceConverter<ValueType>
+    public class TraceConverterValueType : TraceConverter<ValueType>
     {
+        public TraceConverterValueType()
+        {
+        }
+
+        public TraceConverterValueType(string format)
+            : this()
+        {
+            Format = format;
+        }
+
+        public string Format { get; }
+
         protected override TraceCapture Capture(ValueType obj)
         {
-            return new TraceCapture { Text = obj.ToString() };
+            return new TraceCapture { Text = string.Format($"{{0:{Format}}}", obj) };
         }
     }
 }

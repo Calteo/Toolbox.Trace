@@ -10,14 +10,24 @@ using System.Threading;
 
 namespace Toolbox.Trace
 {
+    /// <summary>
+    /// An <see cref="ObjectTraceListener"/> with output to a file in text format
+    /// </summary>
     public class ObjectFileTraceListener : ObjectTraceListener
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectFileTraceListener"/> class.
+        /// </summary>
         public ObjectFileTraceListener()
         {
             Filename = $"{nameof(ObjectFileTraceListener)}.txt";
             Template = Properties.Resources.ObjectFileTraceListenerTemplate;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectFileTraceListener"/> class.
+        /// </summary>
+        /// <param name="initData">this is ignored</param>
         public ObjectFileTraceListener(string initData)
             : this()
         {            
@@ -25,7 +35,13 @@ namespace Toolbox.Trace
 
         #region Filename
         private const string AttributeFilename = "filename";
-        [SupportedAttribute(AttributeFilename)]
+        /// <summary>
+        /// Gets or sets the filename of the output file.
+        /// </summary>
+        /// <remarks>
+        /// This property can be set from the configuration file with the attribute 'filename'.
+        /// </remarks>
+        [SupportedAttribute(AttributeFilename)]       
         public string Filename
         {
             get => Attributes[AttributeFilename];
@@ -35,6 +51,12 @@ namespace Toolbox.Trace
 
         #region Append
         private const string AttributeAppend = "append";
+        /// <summary>
+        /// Get or sets if the outpuf file should be appended or overwritten.
+        /// </summary>
+        /// <remarks>
+        /// This property can be set from the configuration file with the attribute 'append'.
+        /// </remarks>
         [SupportedAttribute(AttributeAppend)]
         public bool Append
         {
@@ -45,6 +67,12 @@ namespace Toolbox.Trace
 
         #region Template
         private const string AttributeTemplate = "template";
+        /// <summary>
+        /// Gets or sets the template for writing the output of one <see cref="TraceItem"/>.
+        /// </summary>
+        /// <remarks>
+        /// This property can be set from the configuration file with the attribute 'template'.
+        /// </remarks>
         [SupportedAttribute(AttributeTemplate)]
         public string Template
         {
