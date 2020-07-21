@@ -1,0 +1,1045 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class ObjectTraceListener
+   | Toolbox </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class ObjectTraceListener
+   | Toolbox ">
+    <meta name="generator" content="docfx 2.56.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/icon_tools_50.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Toolbox.Trace.ObjectTraceListener">
+  
+  
+  <h1 id="Toolbox_Trace_ObjectTraceListener" data-uid="Toolbox.Trace.ObjectTraceListener" class="text-break">Class ObjectTraceListener
+  </h1>
+  <div class="markdown level0 summary"><p>Base class for all listeners that trace objects.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.MarshalByRefObject</span></div>
+    <div class="level2"><span class="xref">System.Diagnostics.TraceListener</span></div>
+    <div class="level3"><span class="xref">ObjectTraceListener</span></div>
+      <div class="level4"><a class="xref" href="Toolbox.Trace.ObjectFileTraceListener.html">ObjectFileTraceListener</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Dispose(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Fail(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Fail(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Write(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Write(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Write(System.Object, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.WriteIndent()</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.WriteLine(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.WriteLine(System.String, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.WriteLine(System.Object, System.String)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.TraceTransfer(System.Diagnostics.TraceEventCache, System.String, System.Int32, System.String, System.Guid)</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Attributes</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Name</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.IndentLevel</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.IndentSize</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.Filter</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.NeedIndent</span>
+    </div>
+    <div>
+      <span class="xref">System.Diagnostics.TraceListener.TraceOutputOptions</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.MemberwiseClone(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.GetLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.InitializeLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.CreateObjRef(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Toolbox.Trace.html">Toolbox.Trace</a></h6>
+  <h6><strong>Assembly</strong>: Toolbox.Trace.dll</h6>
+  <h5 id="Toolbox_Trace_ObjectTraceListener_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ObjectTraceListener : TraceListener, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener__ctor.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L21">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener__ctor_" data-uid="Toolbox.Trace.ObjectTraceListener.#ctor*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener__ctor" data-uid="Toolbox.Trace.ObjectTraceListener.#ctor">ObjectTraceListener()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Toolbox.Trace.ObjectTraceListener.html">ObjectTraceListener</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ObjectTraceListener()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener__ctor_System_String_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.%23ctor(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L34">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener__ctor_" data-uid="Toolbox.Trace.ObjectTraceListener.#ctor*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener__ctor_System_String_" data-uid="Toolbox.Trace.ObjectTraceListener.#ctor(System.String)">ObjectTraceListener(String)</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Toolbox.Trace.ObjectTraceListener.html">ObjectTraceListener</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ObjectTraceListener(string initData)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">initData</span></td>
+        <td><p>this is ignored</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_IsThreadSafe.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.IsThreadSafe%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L40">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_IsThreadSafe_" data-uid="Toolbox.Trace.ObjectTraceListener.IsThreadSafe*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_IsThreadSafe" data-uid="Toolbox.Trace.ObjectTraceListener.IsThreadSafe">IsThreadSafe</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsThreadSafe { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.IsThreadSafe</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_MaxCollectionCount.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.MaxCollectionCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L81">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_MaxCollectionCount_" data-uid="Toolbox.Trace.ObjectTraceListener.MaxCollectionCount*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_MaxCollectionCount" data-uid="Toolbox.Trace.ObjectTraceListener.MaxCollectionCount">MaxCollectionCount</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the length of elements trace from a collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MaxCollectionCount { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Toolbox_Trace_ObjectTraceListener_MaxCollectionCount_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This property can be set from the configuration file with the attribute 'maxCollectionCount'.</p>
+</div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_Writer.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.Writer%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L42">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_Writer_" data-uid="Toolbox.Trace.ObjectTraceListener.Writer*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_Writer" data-uid="Toolbox.Trace.ObjectTraceListener.Writer">Writer</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TextWriter Writer { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_Close.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.Close%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L154">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_Close_" data-uid="Toolbox.Trace.ObjectTraceListener.Close*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_Close" data-uid="Toolbox.Trace.ObjectTraceListener.Close">Close()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Close()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.Close()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_CreateWriter.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.CreateWriter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L44">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_CreateWriter_" data-uid="Toolbox.Trace.ObjectTraceListener.CreateWriter*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_CreateWriter" data-uid="Toolbox.Trace.ObjectTraceListener.CreateWriter">CreateWriter()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TextWriter CreateWriter()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.TextWriter</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_Enqueue_Toolbox_Trace_TraceItem_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.Enqueue(Toolbox.Trace.TraceItem)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L89">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_Enqueue_" data-uid="Toolbox.Trace.ObjectTraceListener.Enqueue*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_Enqueue_Toolbox_Trace_TraceItem_" data-uid="Toolbox.Trace.ObjectTraceListener.Enqueue(Toolbox.Trace.TraceItem)">Enqueue(TraceItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void Enqueue(TraceItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Toolbox.Trace.TraceItem.html">TraceItem</a></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_Flush.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.Flush%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L146">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_Flush_" data-uid="Toolbox.Trace.ObjectTraceListener.Flush*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_Flush" data-uid="Toolbox.Trace.ObjectTraceListener.Flush">Flush()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Flush()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.Flush()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_GetAttribute__1_System_String_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.GetAttribute%60%601(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L48">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_GetAttribute_" data-uid="Toolbox.Trace.ObjectTraceListener.GetAttribute*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_GetAttribute__1_System_String_" data-uid="Toolbox.Trace.ObjectTraceListener.GetAttribute``1(System.String)">GetAttribute&lt;T&gt;(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected T GetAttribute&lt;T&gt;(string key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_GetSupportedAttributes.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.GetSupportedAttributes%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L65">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_GetSupportedAttributes_" data-uid="Toolbox.Trace.ObjectTraceListener.GetSupportedAttributes*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_GetSupportedAttributes" data-uid="Toolbox.Trace.ObjectTraceListener.GetSupportedAttributes">GetSupportedAttributes()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override string[] GetSupportedAttributes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.GetSupportedAttributes()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_Init.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.Init%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L111">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_Init_" data-uid="Toolbox.Trace.ObjectTraceListener.Init*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_Init" data-uid="Toolbox.Trace.ObjectTraceListener.Init">Init()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Init()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_RegisterConverter__1.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.RegisterConverter%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L257">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_RegisterConverter_" data-uid="Toolbox.Trace.ObjectTraceListener.RegisterConverter*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_RegisterConverter__1" data-uid="Toolbox.Trace.ObjectTraceListener.RegisterConverter``1">RegisterConverter&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RegisterConverter&lt;T&gt;()
+    where T : TraceConverterBase, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_SetAttribute__1_System_String___0_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.SetAttribute%60%601(System.String%2C%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L57">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_SetAttribute_" data-uid="Toolbox.Trace.ObjectTraceListener.SetAttribute*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_SetAttribute__1_System_String___0_" data-uid="Toolbox.Trace.ObjectTraceListener.SetAttribute``1(System.String,``0)">SetAttribute&lt;T&gt;(String, T)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void SetAttribute&lt;T&gt;(string key, T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">key</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_TraceData_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_Object_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.TraceData(System.Diagnostics.TraceEventCache%2CSystem.String%2CSystem.Diagnostics.TraceEventType%2CSystem.Int32%2CSystem.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L219">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_TraceData_" data-uid="Toolbox.Trace.ObjectTraceListener.TraceData*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_TraceData_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_Object_" data-uid="Toolbox.Trace.ObjectTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object)">TraceData(TraceEventCache, String, TraceEventType, Int32, Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void TraceData(TraceEventCache eventCache, string source, TraceEventType eventType, int id, object data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventCache</span></td>
+        <td><span class="parametername">eventCache</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">source</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventType</span></td>
+        <td><span class="parametername">eventType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32, System.Object)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_TraceData_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_Object___.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.TraceData(System.Diagnostics.TraceEventCache%2CSystem.String%2CSystem.Diagnostics.TraceEventType%2CSystem.Int32%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L225">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_TraceData_" data-uid="Toolbox.Trace.ObjectTraceListener.TraceData*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_TraceData_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_Object___" data-uid="Toolbox.Trace.ObjectTraceListener.TraceData(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.Object[])">TraceData(TraceEventCache, String, TraceEventType, Int32, Object[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void TraceData(TraceEventCache eventCache, string source, TraceEventType eventType, int id, params object[] data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventCache</span></td>
+        <td><span class="parametername">eventCache</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">source</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventType</span></td>
+        <td><span class="parametername">eventType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.TraceData(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32, System.Object[])</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.TraceEvent(System.Diagnostics.TraceEventCache%2CSystem.String%2CSystem.Diagnostics.TraceEventType%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L207">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_TraceEvent_" data-uid="Toolbox.Trace.ObjectTraceListener.TraceEvent*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_" data-uid="Toolbox.Trace.ObjectTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32)">TraceEvent(TraceEventCache, String, TraceEventType, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventCache</span></td>
+        <td><span class="parametername">eventCache</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">source</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventType</span></td>
+        <td><span class="parametername">eventType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_String_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.TraceEvent(System.Diagnostics.TraceEventCache%2CSystem.String%2CSystem.Diagnostics.TraceEventType%2CSystem.Int32%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L213">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_TraceEvent_" data-uid="Toolbox.Trace.ObjectTraceListener.TraceEvent*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_String_" data-uid="Toolbox.Trace.ObjectTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String)">TraceEvent(TraceEventCache, String, TraceEventType, Int32, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventCache</span></td>
+        <td><span class="parametername">eventCache</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">source</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventType</span></td>
+        <td><span class="parametername">eventType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32, System.String)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_String_System_Object___.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.TraceEvent(System.Diagnostics.TraceEventCache%2CSystem.String%2CSystem.Diagnostics.TraceEventType%2CSystem.Int32%2CSystem.String%2CSystem.Object%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L189">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_TraceEvent_" data-uid="Toolbox.Trace.ObjectTraceListener.TraceEvent*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_TraceEvent_System_Diagnostics_TraceEventCache_System_String_System_Diagnostics_TraceEventType_System_Int32_System_String_System_Object___" data-uid="Toolbox.Trace.ObjectTraceListener.TraceEvent(System.Diagnostics.TraceEventCache,System.String,System.Diagnostics.TraceEventType,System.Int32,System.String,System.Object[])">TraceEvent(TraceEventCache, String, TraceEventType, Int32, String, Object[])</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void TraceEvent(TraceEventCache eventCache, string source, TraceEventType eventType, int id, string format, params object[] args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventCache</span></td>
+        <td><span class="parametername">eventCache</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">source</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Diagnostics.TraceEventType</span></td>
+        <td><span class="parametername">eventType</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">id</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">format</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Object</span>[]</td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.TraceEvent(System.Diagnostics.TraceEventCache, System.String, System.Diagnostics.TraceEventType, System.Int32, System.String, System.Object[])</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_Write_System_String_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.Write(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L183">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_Write_" data-uid="Toolbox.Trace.ObjectTraceListener.Write*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_Write_System_String_" data-uid="Toolbox.Trace.ObjectTraceListener.Write(System.String)">Write(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Write(string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.Write(System.String)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_Write_Toolbox_Trace_TraceItem_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.Write(Toolbox.Trace.TraceItem)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L109">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_Write_" data-uid="Toolbox.Trace.ObjectTraceListener.Write*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_Write_Toolbox_Trace_TraceItem_" data-uid="Toolbox.Trace.ObjectTraceListener.Write(Toolbox.Trace.TraceItem)">Write(TraceItem)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void Write(TraceItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Toolbox.Trace.TraceItem.html">TraceItem</a></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener_WriteLine_System_String_.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener.WriteLine(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L177">View Source</a>
+  </span>
+  <a id="Toolbox_Trace_ObjectTraceListener_WriteLine_" data-uid="Toolbox.Trace.ObjectTraceListener.WriteLine*"></a>
+  <h4 id="Toolbox_Trace_ObjectTraceListener_WriteLine_System_String_" data-uid="Toolbox.Trace.ObjectTraceListener.WriteLine(System.String)">WriteLine(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void WriteLine(string message)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">message</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Diagnostics.TraceListener.WriteLine(System.String)</span></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Calteo/Toolbox.Trace/new/master/apiSpec/new?filename=Toolbox_Trace_ObjectTraceListener.md&amp;value=---%0Auid%3A%20Toolbox.Trace.ObjectTraceListener%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/src/Toolbox.Trace/ObjectTraceListener.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            My Footer
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

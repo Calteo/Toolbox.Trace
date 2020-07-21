@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Introduction | Toolbox </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Introduction | Toolbox ">
+    <meta name="generator" content="docfx 2.56.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/icon_tools_50.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="introduction">Introduction</h1>
+
+<p>When it comes to trace output it is rather handy if it exits. Though creating it sometimes is a hassle.
+Therefore this component makes it easy to create a trace output with all information needed.
+The output can be customized to your needs.</p>
+<p>Unfortunately the <code>System.Diagnostic.Trace</code> does not give acces to the <code>TraceData()</code> method, which is more than handy to output whole objects to the trace.</p>
+<h2 id="basics">Basics</h2>
+<p>The trace always consists of a <code>TraceSource</code> which gets called to trace some data and a number of attached <code>TraceListener</code> instances. These create the output for the selected targets.</p>
+<p>The <code>TraceSource</code> and <code>TraceListener</code> can be created by code or by the configuration file (i.e <code>app.config</code>).
+The source should be stored in some location, where you can access it convieniently from your code. Most of the time this seems to be a public static property of some class.</p>
+<p>Here is a simple example from code of the TestApp.</p>
+<pre><code>    static void TestFromCode()
+        {
+            var source = new TraceSource(&quot;TestFromCode&quot;, SourceLevels.All);
+            var listener = new ObjectFileTraceListener { Filename = &quot;trace.txt&quot; };
+            source.Listeners.Add(listener);
+
+            source.TraceInformation(&quot;Hello trace!&quot;);
+
+            source.Close();
+        }
+</code></pre>
+<p>The first line creates a new <code>TraceSource</code>. Be sure to set the <code>SourceLevels.All</code>. Otherwise you will miss some output or all - even where the methods are called.</p>
+<p>The next lines create an <code>ObjectFileTraceListener</code> and attaches it to the source.</p>
+<p>The next line creates a trace entry.</p>
+<p>The last line closes the trace an flushes all output to the file.</p>
+<p>The file <code>trace.txt</code> will contain the output of the following form.</p>
+<pre><code>[10.07.2020 13:40:50] &lt;P=2168&gt; &lt;T=1&gt; TestFromCode: Information[0] - Void TestFromCode() - Hello trace!
+</code></pre>
+<p>The line consists of</p>
+<ul>
+<li>the timestamp when the trace entry was created.</li>
+<li>the process id (<code>P=2168</code>)</li>
+<li>the thread id (<code>T=1</code>)</li>
+<li>the name of the <code>TraceSource</code></li>
+<li>the kind of trace (<code>TraceEventType</code>) and an id, which in this case is automatically <code>0</code>.</li>
+<li>the method calling the trace source</li>
+<li>the message given</li>
+</ul>
+<h2 id="some-objects">Some objects</h2>
+<p>If objects have to be trace they can easily be added. Consider a data object like</p>
+<pre><code>    class SimpleData
+    {
+        public string Name { get; set; }
+        public int Number { get; set; }
+        [NotTraceable]
+        public string Secret =&gt; &quot;This should not appear in the trace.&quot;;
+
+        public DateTime TimeStamp { get; set; } = DateTime.Now;
+
+        [TraceConverter(typeof(TraceConverterValueType), &quot;yyyy-MM-dd-HH-mm-ss-ffffff&quot;)]
+        public DateTime Detail { get; set; } = DateTime.Now;
+    }
+</code></pre>
+<p>and the code as</p>
+<pre><code>        static void TestDataFromCode()
+        {
+            var source = new TraceSource(&quot;TestDataFromCode&quot;, SourceLevels.All);
+            var listener = new ObjectFileTraceListener { Filename = &quot;trace.txt&quot; };
+            source.Listeners.Add(listener);
+
+            var data = new SimpleData { Name = &quot;Alice&quot; };
+
+            source.TraceData(TraceEventType.Error, 42, &quot;some text&quot;, data);
+
+            source.Close();
+        }
+</code></pre>
+<p>Then the trace will look like this.</p>
+<pre><code>[10.07.2020 13:59:20] &lt;P=15636&gt; &lt;T=1&gt; TestDataFromCode: Error[42] - Void TestDataFromCode() - 2 object(s)
+  [0] = 'some text'
+  [1] = Toolbox.Trace.TestApp.SimpleData
+      Name = 'Alice'
+      Number = 0
+      TimeStamp = 10.07.2020 13:59:20
+      Detail = 2020-07-10-13-59-20-171750
+</code></pre>
+<p>The first line will contain the information as above. Followed by the output of the the objects.
+This first object (index <code>0</code>) is just the <code>string</code> and the second the instance of <code>SimpleData</code>.</p>
+<p>Note: The property <code>Secret</code> is not traced due to the <code>NotTraceable</code> attribute and <code>Detail</code> has a special formatting attached to it though the <code>TraceConverter</code> attributes.
+These will be explained later. And there are more options that customize the output.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/Calteo/Toolbox.Trace/blob/master/docfx_project/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            My Footer
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
