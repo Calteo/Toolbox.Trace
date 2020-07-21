@@ -1,1 +1,1 @@
-﻿[\d{2}.\d{2}.\d{4} \d{2}:\d{2}:\d{2}] <P=\d+> <T=\d+> ObjectFileTraceListenerTests: Information[0] - Void TraceInformationFormat() - some information is 42
+﻿[*] <P=\d+> <T=\d+> ObjectFileTraceListenerTests: Information[0] - Void TraceInformationFormat() - some information is 42

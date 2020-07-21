@@ -63,6 +63,7 @@ namespace Toolbox.Trace.Test
                 {
                     var line = reader.ReadLine()
                         .Replace(".", @"\.")
+                        .Replace("*", @".*")
                         .Replace("[", @"\[").Replace("]", @"\]")
                         .Replace("(", @"\(").Replace(")", @"\)")
                         .Replace("<", @"\<").Replace(">", @"\>");
