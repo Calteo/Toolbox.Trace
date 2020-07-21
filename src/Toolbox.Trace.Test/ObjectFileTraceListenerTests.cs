@@ -166,6 +166,7 @@ namespace Toolbox.Trace.Test
             AssertLines(expectedLines, actualLines);
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
         private void TraceInformationMethod(TraceSource source, string text)
         {
             source.TraceInformation(text);

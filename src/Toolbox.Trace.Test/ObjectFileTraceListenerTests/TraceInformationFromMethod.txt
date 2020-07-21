@@ -1,1 +1,1 @@
-﻿[*] <P=\d+> <T=\d+> ObjectFileTraceListenerTests: Information[0] - Void TraceInformationMethod(TraceSource, String) - some information
+﻿[*] <P=\d+> <T=\d+> ObjectFileTraceListenerTests: Information[0] - Void TraceInformationMethod() - some information

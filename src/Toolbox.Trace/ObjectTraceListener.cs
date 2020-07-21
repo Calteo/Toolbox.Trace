@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Threading;
 
 namespace Toolbox.Trace
@@ -166,7 +167,7 @@ namespace Toolbox.Trace
 
         private StackFrame[] GetFrames()
         {
-            var frames = new StackTrace(2, true).GetFrames()
+            var frames = new StackTrace(2).GetFrames()
                 .SkipWhile(f => f.GetMethod().DeclaringType.Namespace == "System.Diagnostics" || typeof(ObjectTraceListener).IsAssignableFrom(f.GetMethod().DeclaringType))
                 .ToArray();
             return frames;
@@ -198,8 +199,8 @@ namespace Toolbox.Trace
                     ThreadId = Thread.CurrentThread.ManagedThreadId,
                     ProcessId = Process.GetCurrentProcess().Id,
                     Text = string.Format(format, args ?? new object[0]),
-                    Caller = frames[0]
-                });
+                    Caller = frames[0],
+                });            
         }
 
         /// <inheritdoc/>

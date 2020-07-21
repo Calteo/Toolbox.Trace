@@ -28,7 +28,7 @@ namespace Toolbox.Trace
                 if (method is MethodInfo methodInfo)
                     returnType = $"{methodInfo.ReturnType.Name} ";
 
-                return $"{returnType}{method.Name}({string.Join(", ", method.GetParameters().Select(p => p.ParameterType.Name))})";
+                return $"{returnType}{method.Name}()";
             }
         }
         public TraceCapture[] Objects { get; internal set; }
