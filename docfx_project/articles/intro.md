@@ -10,7 +10,7 @@ Unfortunately the `System.Diagnostic.Trace` does not give acces to the `TraceDat
 The trace always consists of a `TraceSource` which gets called to trace some data and a number of attached `TraceListener` instances. These create the output for the selected targets.
 
 The `TraceSource` and `TraceListener` can be created by code or by the configuration file (i.e `app.config`).
-The source should be stored in some location, where you can access it convieniently from your code. Most of the time this seems to be a public static property od some class.
+The source should be stored in some location, where you can access it convieniently from your code. Most of the time this seems to be a public static property of some class.
 
 Here is a simple example from code of the TestApp.
 ```
