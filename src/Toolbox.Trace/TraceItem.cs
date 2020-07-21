@@ -19,6 +19,18 @@ namespace Toolbox.Trace
         public string Text { get; internal set; }
         public StackFrame Caller { get; internal set; }
         public MethodBase Method => Caller.GetMethod();
+        public string MethodSignature
+        {
+            get
+            {
+                var method = Caller.GetMethod();
+                var returnType = "";
+                if (method is MethodInfo methodInfo)
+                    returnType = $"{methodInfo.ReturnType.Name} ";
+
+                return $"{returnType}{method.Name}({string.Join(", ", method.GetParameters().Select(p => p.ParameterType.Name))})";
+            }
+        }
         public TraceCapture[] Objects { get; internal set; }
     }
 }

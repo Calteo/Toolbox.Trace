@@ -1,2 +1,2 @@
-[{Timestamp:G}] <P={ProcessId}> <T={ThreadId}> {Source}: {EventType}[{Id}] - {Method} - {Text}
+[{Timestamp:G}] <P={ProcessId}> <T={ThreadId}> {Source}: {EventType}[{Id}] - {MethodSignature} - {Text}
   {Objects}

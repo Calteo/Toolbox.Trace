@@ -1,1 +1,1 @@
-﻿[*] <P=\d+> <T=\d+> ObjectFileTraceListenerTests: Information[0] - Void <TraceInformationFromAction>b__9_0(System.Diagnostics.TraceSource) - some information
+﻿[*] <P=\d+> <T=\d+> ObjectFileTraceListenerTests: Information[0] - Void <TraceInformationFromAction>b__9_0(TraceSource) - some information
