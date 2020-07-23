@@ -74,6 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ObjectFileTraceListenerTemplate.txt" />
+    <None Include="Toolbox.Trace.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
